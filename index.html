@@ -20,15 +20,15 @@
       :root {
         --primary: #ff6b6b;
         --secondary: #4ecdc4;
-        --accent: #ffe66d;
+        --accent: #ffe35a;
         --dark: #2d3436;
         --light: #f9f9f9;
-        --gradient: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+        --gradient: linear-gradient(135deg, #ff6b6b 0%, #bd9a4f 100%);
       }
 
       body {
         font-family: "Quicksand", sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #7884bc 0%, #764ba2 100%);
         min-height: 100vh;
         overflow-x: hidden;
       }
@@ -747,6 +747,50 @@
           transform: scale(1.05);
         }
       }
+      .service-text {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 12px;
+      }
+
+      .service-text li {
+        margin: 10px 0;
+      }
+
+      /* Link chữ */
+      .service-text a {
+        color: #36321a;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 16px;
+        position: relative;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+      }
+
+      /* Hover: phát sáng + trượt nhẹ */
+      .service-text a:hover {
+        color: #ff4d4f;
+        text-shadow: 0 0 6px rgba(255, 77, 79, 0.6),
+          0 0 14px rgba(255, 77, 79, 0.8);
+        transform: translateX(6px);
+      }
+
+      /* Gạch chân hiệu ứng */
+      .service-text a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #ffd700, #ff4d4f);
+        transition: width 0.3s ease;
+      }
+
+      .service-text a:hover::after {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -828,14 +872,17 @@
         // ═══════════════════════════════════════════════════════════════════
         storyTitle: "📖 Câu chuyện của Ảnh Cường  ",
         storyContent: `
-                <p>Xin chào, tôi là một <span class="highlight">Player Câu Cá Vạn Cân</span> đang loay hoay giữa cuộc sống, chật vật tới <span class="highlight">hói đầu</span>. Nhưng tôi cũng cần được yêu thương! 💔</p>
+                <p>Xin chào, tôi là một <span class="highlight">Player Câu Cá Vạn Cân</span> vì phục vụ anh em nên livestream tới <span class="highlight">hói đầu</span>. Nhưng bộ pc đã quá tàn khiến sập live liên tục. Tôi cần sự yêu thương! 💔</p>
                 <p>Mỗi đồng bạn donate sẽ giúp tôi:</p>
                 <ul style="margin-top: 10px; margin-left: 20px;">
-                    <li>🍜 Ăn phở thay vì mì gói</li>
-                    <li>☕ Mua cà phê để thức phục vụ ae</li>
-                    <li>💊 Mua thuốc nhỏ mắt (quan trọng!)</li>
-                    <li>🎮 Thỉnh thoảng được chơi game</li>
+                    <li>🍜 Ăn phở thay vì mì gói hoặc mua bộ pc mới live stream phục vụ ae</li>
+                    <li>☕ Mua cà phê để thức hoặc mua bộ pc mới live stream phục vụ ae</li>
+                    <li>💊 Mua thuốc nhỏ mắt hoặc mua bộ pc mới live stream phục vụ ae(quan trọng!)</li>
+                    <li>🎮 Thỉnh thoảng được chơi game hoặc mua bộ pc mới live stream phục vụ ae</li>
+                    <li>🛠️ Sửa chữa và nâng cấp bộ pc hoặc mua bộ pc mới live stream phục vụ ae</li>
+                    <li>👏 👏 👏 </li>
                 </ul>
+                
                <p>
     <span style="
         color: #ff4d4f;
@@ -843,9 +890,27 @@
         font-size: 18px;
         text-shadow: 0 0 6px rgba(255,77,79,0.6);
     ">
-        🔥 Ngoài ra AD Shjn nhận All dịch vụ game nhé!
-        <a href="https://zalo.me/g/fdxtcs533" class="highlight" target="_blank">Hải</a> !
+        🔥 Ngoài ra AD Shjn nhận All dịch vụ game nhé! 👇 👇 👇 
+        <a href="https://zalo.me/g/fdxtcs533" class="highlight" target="_blank">Link Box</a> !
     </span>
+    <ul class="service-text">
+  <li>
+    <a href="https://zalo.me/g/fdxtcs533" target="_blank">
+      💎 Dịch vụ mua cá 10k = 10k cá tự chọn
+    </a>
+  </li>
+  <li>
+    <a href="https://zalo.me/g/fdxtcs533" target="_blank">
+      💎 Dịch vụ mua item 10k = 10k item tự chọn (đậu, tự động câu)
+    </a>
+  </li>
+  <li>
+    <a href="https://zalo.me/g/fdxtcs533" target="_blank">
+      💎 Dịch vụ cày top trọng lượng
+    </a>
+  </li>
+</ul>
+
 </p>
 
                 `,
@@ -889,29 +954,29 @@
             momoLink: "",
             isDefault: true, // Mức mặc định được chọn sẵn
           },
-          //   ,
-          //   {
-          //     amount: 100000,
-          //     emoji: "🍕",
-          //     description: "Pizza party",
-          //     momoLink: "https://me.momo.vn/1MIKuAfAtmCpIJu8swt3/4zbqQnDXM0P2bpr",
-          //   },
-          //   {
-          //     amount: 200000,
-          //     emoji: "🎮",
-          //     description: "1 game mới",
-          //     momoLink: "https://me.momo.vn/1MIKuAfAtmCpIJu8swt3/N1aMZAom5Y4BbWm",
-          //   },
-          //   {
-          //     amount: 500000,
-          //     emoji: "💎",
-          //     description: "VIP Supporter",
-          //     momoLink: "https://me.momo.vn/1MIKuAfAtmCpIJu8swt3/MvbmqjGVG2XrbYA",
-          //   },
+          ,
+          {
+            amount: 100000,
+            emoji: "🍕",
+            description: "Pizza party",
+            momoLink: "",
+          },
+          {
+            amount: 200000,
+            emoji: "🎮",
+            description: "1 game mới",
+            momoLink: "",
+          },
+          {
+            amount: 500000,
+            emoji: "💎",
+            description: "VIP Supporter",
+            momoLink: "",
+          },
         ],
 
         // Link MoMo mặc định (khi không tìm thấy amount phù hợp)
-        momoFallback: "https://me.momo.vn/duannuoianh",
+        momoFallback: "https://me.momo.vn/duannuoianhcuong",
 
         // ═══════════════════════════════════════════════════════════════════
         // 🎉 DANH SÁCH NGƯỜI ĐÃ DONATE
@@ -925,7 +990,7 @@
         // ═══════════════════════════════════════════════════════════════════
         footerText: "Nếu bạn thấy vui, hãy share cho bạn bè cùng cười! 😂",
         disclaimer: `
-                ⚠️ Đây là trang web parody/troll.<br>
+                ⚠️ copy right @shjn.<br>
                 Mọi donate đều được sử dụng để mua phở và cà phê (thật sự) 🍜 ☕
             `,
 
